@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "InsuranceApp"
+  title: "Insurance Summary App"
   navbar:
     left:
       - href: index.qmd

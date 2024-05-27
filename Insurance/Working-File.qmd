@@ -1,0 +1,55 @@
+---
+title: "Insurance Working File"
+author: "Roger Chen"
+date: "24 May 2024"
+date-modified: "last-modified"
+execute: 
+  eval: true
+  echo: true
+  freeze: true
+  warning: false
+  message: false
+number-sections: true
+format: html
+editor: visual
+---
+
+# Loading the packages
+
+```{r}
+#| code-fold: true  
+
+pacman::p_load(scales, viridis, lubridate, ggthemes, gridExtra, readxl, knitr, data.table, CGPfunctions, ggHoriPlot, tidyverse)  
+```
+
+# Data Preparation
+
+Importing the data
+
+```{r}
+
+clientdata <- read_excel("data/ViewClientProfile.xls")
+```
+
+Examining the data
+
+```{r}
+
+kable(head(clientdata))
+```
+
+Checking the structure
+
+```{r}
+
+str(clientdata)
+```
+
+# Descriptive Statistics
+
+```{r}
+
+ggplot(data=clientdata,         
+       aes(x=Gender)) +   
+  geom_bar()
+```
